@@ -75,6 +75,13 @@ export default {
     next () {
       return resolvePageLink(LINK_TYPES.NEXT, this)
     }
+  },
+  watch: {
+    $route (to, from) {
+      if (to.path !== from.path) {
+        window.scrollTo(0, 0)
+      }
+    }
   }
 }
 
